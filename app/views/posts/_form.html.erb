@@ -1,0 +1,13 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :author %>
+    <%= f.input :title %>
+    <%= f.input :content, :input_html => { :rows => 16 } %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, :class => "btn btn-primary"  %>
+  </div>
+<% end %>
