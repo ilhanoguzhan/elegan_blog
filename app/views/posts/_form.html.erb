@@ -2,9 +2,15 @@
   <%= f.error_notification %>
 
   <div class="inputs">
+    <%= f.association :category, :input_html => { :class => "form-control" } %>
     <%= f.input :author %>
     <%= f.input :title %>
     <%= f.input :content, :input_html => { :rows => 16 } %>
+    <h3>Pictures</h3>
+    <%= f.fields_for :pictures do |builder| %>
+        <%= render "picture_fields", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Add Picture", f, :pictures %></p>
   </div>
 
   <div class="actions">
