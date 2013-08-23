@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= comment.commenter %>
+    <div class="pull-right">
+      <%= link_to  [comment.post, comment],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" do %>
+          Destroy Comment
+          <span class="glyphicon glyphicon-remove"></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="panel-footer"><%= comment.body %></div>
+</div>
