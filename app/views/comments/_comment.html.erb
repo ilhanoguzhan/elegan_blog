@@ -2,7 +2,7 @@
   <div class="panel-body">
     <%= comment.commenter %>
     <div class="pull-right">
-      <%= link_to  [comment.post, comment],
+      <%= link_to  [model_object, comment],
                   method: :delete,
                   data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" do %>
           Destroy Comment
