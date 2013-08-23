@@ -1,0 +1,18 @@
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <h1>The Perfect Project!</h1>
+  <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+  <p>To see the difference between static and fixed top navbars, just scroll.</p>
+  <p>
+    <%= link_to posts_path, :class => "btn btn-lg btn-primary" do %>
+        View all posts &raquo;
+    <% end %>
+  </p>
+</div>
+
+<% @posts.each do |post| %>
+    <div class="jumbotron">
+      <h1><%= link_to post.title, post_path(post) %></h1>
+      <p><%= post.content[0,300] %><%= link_to " more...", post_path(post) %></p>
+    </div>
+<% end %>
