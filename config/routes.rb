@@ -5,6 +5,7 @@ EleganBlog::Application.routes.draw do
   get "tags/destroy"
   resources :posts do
     resources :comments
+    resources :pictures
   end
 
   get "welcome/index"
