@@ -1,0 +1,11 @@
+<h3>Pictures</h3>
+<div id="pictures">
+  <%= f.simple_fields_for :pictures do |task| %>
+      <%= render 'pictures/picture_fields', :f => task, :post => model_object %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'add picture', f, :pictures,
+                        :partial => 'pictures/picture_fields',
+                        :class => "btn btn-success btn-xs"  %>
+  </div>
+</div>

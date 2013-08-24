@@ -6,15 +6,7 @@
     <%= f.input :author %>
     <%= f.input :title %>
     <%= f.input :content, :input_html => { :rows => 16 } %>
-    <h3>Pictures</h3>
-    <div id="pictures">
-      <%= f.simple_fields_for :pictures do |task| %>
-          <%= render 'picture_fields', :f => task, :post => @post %>
-      <% end %>
-      <div class="links">
-        <%= link_to_add_association 'add picture', f, :pictures, :class => "btn btn-success btn-xs"  %>
-      </div>
-    </div>
+    <%= render "pictures/form", {:f => f, :model_object => @post} %>
   </div>
 
   <div class="actions">
