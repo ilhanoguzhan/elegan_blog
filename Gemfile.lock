@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/decioferreira/bootstrap-generators.git
+  revision: d79f69c1b5e82fd1245d1b5449e51679bf917c9a
+  specs:
+    bootstrap-generators (3.0.0)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: 23c3af675301bbb5e2f52dfe6c28a27036595d42
   branch: 3
@@ -121,6 +128,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-generators!
   bootstrap-sass!
   cocoon
   coffee-rails (~> 4.0.0)

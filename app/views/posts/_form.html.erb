@@ -5,6 +5,7 @@
     <%= f.association :category, :selected => :category, :input_html => { :class => "form-control" } %>
     <%= f.input :author %>
     <%= f.input :title %>
+    <%= f.input :tag_list, :input_html => { :class => "search-query" } %>
     <%= f.input :content, :input_html => { :rows => 16 } %>
     <%= render "pictures/form", {:f => f, :model_object => @post} %>
   </div>
@@ -13,3 +14,8 @@
     <%= f.button :submit, :class => "btn btn-primary"  %>
   </div>
 <% end %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#post_tag_list').tagsInput();
+    });
+</script>

@@ -1,14 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>Show category
+    <div class="pull-right">
+      <%= link_to categories_path, :class => 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Back
+      <% end %>
+      <%= link_to edit_category_path(@category), :class => 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+      <% end %>
+    </div>
+  </h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @category.order %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<dl class="dl-horizontal">
+  <dt><%= Category.human_attribute_name(:name) %>:</dt>
+  <dd><%= @category.name %></dd>
+  <dt><%= Category.human_attribute_name(:order) %>:</dt>
+  <dd><%= @category.order %></dd>
+  <dt><%= Category.human_attribute_name(:picture) %>:</dt>
+  <dd>
+    <% if @category.picture.try(:url).present? %>
+        <%= image_tag root_url + @category.picture.url, size: "128x128" %>
+    <% end %>
+  </dd>
+</dl>

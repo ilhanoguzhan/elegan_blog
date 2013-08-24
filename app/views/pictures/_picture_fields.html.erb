@@ -2,7 +2,7 @@
   <ul class="media-list">
     <li class="media">
       <a class="pull-left" href="#">
-        <% if f.object.url.blank? %>
+        <% if f.object.try(:url).blank? %>
             <%= f.file_field :file %>
         <% else %>
             <%= image_tag  root_url + f.object.url %>

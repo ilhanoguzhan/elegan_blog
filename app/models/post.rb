@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-
+  attr_accessor :tag_list
   has_and_belongs_to_many :tags
   belongs_to :category
   has_many :comments, as: :commentable
@@ -8,5 +8,5 @@ class Post < ActiveRecord::Base
 
   validates_associated :pictures
 
-  default_scope order('updated_at desc')
+  default_scope order: 'updated_at DESC'
 end
