@@ -16,9 +16,7 @@
       <p><%= post.content[0,300] %><%= link_to " more...", post_path(post) %></p>
       <p style="font-size: x-small">
         Tags:
-        <% post.tags.each do |t| %>
-            <%= t.name + ' ' %>
-        <% end %>
+        <%= post.tags.map{|t| t.name }.join(',') %>
       </p>
     </div>
 <% end %>

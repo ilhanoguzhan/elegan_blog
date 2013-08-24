@@ -36,9 +36,7 @@
 </p>
 <h4>Tags:</h4>
 <p sclass="lead" style="font-size: large">
-  <% @post.tags.each do |t| %>
-      <%= t.name + ' ' %>
-  <% end %>
+  <%= @post.tags.map{|t| t.name }.join(',') %>
 </p>
 
 
