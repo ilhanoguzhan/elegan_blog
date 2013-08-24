@@ -1,0 +1,22 @@
+<%= simple_form_for(@category) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name %>
+    <%= f.input :order %>
+    <h3>Picture</h3>
+    <%= f.simple_fields_for :picture do |picture| %>
+        <% if picture.object.try(:url).blank? %>
+            <%= picture.file_field :file %>
+        <% else %>
+            <%= image_tag  root_url + picture.object.url %>
+            <%= picture.file_field :file %>
+        <% end %>
+        <%= picture.input :title %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

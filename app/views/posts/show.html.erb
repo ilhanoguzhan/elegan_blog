@@ -8,8 +8,35 @@
   </h1>
 </div>
 
+<div id="myCarousel" class="carousel slide">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% counter = 0 %>
+    <% @post.pictures.each do |picture| %>
+        <% counter = counter + 1 %>
+        <div class="item<%= ' active' if counter == 1 %>">
+          <%= image_tag  root_url + picture.url, size: "800x400" %>
+          <div class="carousel-caption">
+            <p><%= picture.title %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>
+
 <p sclass="lead" style="font-size: large">
   <%= @post.content %>.
+</p>
+<h4>Tags:</h4>
+<p sclass="lead" style="font-size: large">
+  <%= @post.tags.map{|t| t.name }.join(',') %>
 </p>
 
 
@@ -22,3 +49,10 @@
     <%= render "comments/form" %>
   </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myCarousel').carousel({
+            interval: 3000
+        })
+    });
+</script>

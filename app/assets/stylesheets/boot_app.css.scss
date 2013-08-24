@@ -17,3 +17,12 @@ input {
 textarea {
   @extend .form-control;
 }
+
+.add_fields {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+.remove_fields {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}

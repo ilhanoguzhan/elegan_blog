@@ -1,0 +1,18 @@
+<div class="nested-fields">
+  <ul class="media-list">
+    <li class="media">
+      <a class="pull-left" href="#">
+        <% if f.object.try(:url).blank? %>
+            <%= f.file_field :file %>
+        <% else %>
+            <%= image_tag  root_url + f.object.url %>
+        <% end %>
+      </a>
+      <div class="media-body">
+        <%= f.input :title %>
+        <%= link_to_remove_association "remove picture", f,
+                                       :class => "btn btn-danger btn-xs" %><br />
+      </div>
+    </li>
+  </ul>
+</div>
