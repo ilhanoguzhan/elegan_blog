@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823182854) do
+ActiveRecord::Schema.define(version: 20130824081353) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20130823182854) do
     t.string   "imageable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "original_filename"
+    t.string   "file_path"
   end
 
   create_table "posts", force: true do |t|

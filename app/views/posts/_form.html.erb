@@ -1,4 +1,4 @@
-<%= simple_form_for(@post) do |f| %>
+<%= simple_form_for(@post, :html => { :multipart => true }) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
@@ -9,7 +9,7 @@
     <h3>Pictures</h3>
     <div id="pictures">
       <%= f.simple_fields_for :pictures do |task| %>
-          <%= render 'picture_fields', :f => task %>
+          <%= render 'picture_fields', :f => task, :post => @post %>
       <% end %>
       <div class="links">
         <%= link_to_add_association 'add picture', f, :pictures, :class => "btn btn-success btn-xs"  %>
