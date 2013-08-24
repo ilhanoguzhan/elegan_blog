@@ -1,6 +1,13 @@
 EleganBlog::Application.routes.draw do
+  resources :categories do
+    resources :pictures
+  end
+
+  get "tags/create"
+  get "tags/destroy"
   resources :posts do
     resources :comments
+    resources :pictures
   end
 
   get "welcome/index"

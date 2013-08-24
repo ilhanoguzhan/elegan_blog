@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => '3'
 gem 'simple_form'
 gem 'country_select'
+gem "cocoon"
+gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
 
 group :development do
   gem 'habtm_generator'
