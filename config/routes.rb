@@ -1,10 +1,20 @@
 EleganBlog::Application.routes.draw do
+
+  scope 'admin'do
+    get "/" => "admin#index", as: :admin
+  end
+
+  resources :users
+
+  devise_for :users, path_prefix: "blg"
+
+  get "tags/create"
+  get "tags/destroy"
+
   resources :categories do
     resources :pictures
   end
 
-  get "tags/create"
-  get "tags/destroy"
   resources :posts do
     resources :comments
     resources :pictures
